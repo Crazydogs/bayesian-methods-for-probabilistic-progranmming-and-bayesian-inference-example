@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# -*- coding: UTF-8 -*-
+
 import pymc as pm
 
 # 随机变量
@@ -10,12 +13,8 @@ def deterministic_value(par_1=random_value):
     return par_1 + 100
 print 'deterministic_value: ', deterministic_value.value
 
-print 'call random_value.random()'
-random_value.random()
-print 'random_value: ', random_value.value
-print 'deterministic_value: ', deterministic_value.value
-
-print 'call random_value.random()'
-random_value.random()
-print 'random_value: ', random_value.value
-print 'deterministic_value: ', deterministic_value.value
+for i in range(2):
+    print 'call random_value.random()'
+    random_value.random()
+    print 'random_value: ', random_value.value
+    print 'deterministic_value: ', deterministic_value.value
